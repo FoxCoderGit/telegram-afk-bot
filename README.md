@@ -1,8 +1,3 @@
-Вот полностью исправленный README.md с корректным форматированием и разметкой:
-
-
----
-
 # Telegram Message Archiver
 
 Бот для Telegram, который сохраняет **удалённые** и **отредактированные** сообщения из **личных чатов**, используя Telegram Business API.
@@ -21,24 +16,25 @@
 1. Клонируй репозиторий:
    ```bash
    git clone https://github.com/FoxCoderGit/telegram-message-archiver.git
-   cd telegram-message-archiver
-
+   cd telegram-message-archiver 
+   ```
+   
 2. Установи зависимости:
-
+```bash
 pip install -r requirements.txt
-
+```
 
 3. Отредактируй переменные в начале monitor_message.py:
-
+```Python
 BUSINESS_BOT_TOKEN = "your_bot_token"
-MASTER_CHAT_ID = 123456789
-BUSINESS_OWNER_ID = 123456789
-
+MASTER_CHAT_ID = your_telegram_id
+BUSINESS_OWNER_ID = your_telegram_id
+```
 
 4. Запусти бота:
-
+```bash
 python3 monitor_message.py
-
+```
 
 
 Структура проекта
@@ -61,6 +57,6 @@ Telegram Premium-аккаунт
 Бизнес-подключение Telegram Bot API
 
 
-Лицензия
+## Лицензия
 
-Этот проект распространяется под лицензией MIT.
+Этот проект распространяется под лицензией [MIT](LICENSE).
