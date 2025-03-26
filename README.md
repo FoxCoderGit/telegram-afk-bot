@@ -1,56 +1,44 @@
-# Telegram Message Archiver
+# Telegram AFK Bot
 
-Бот для Telegram, который сохраняет **удалённые** и **отредактированные** сообщения из **личных чатов**, используя Telegram Business API.
+**Telegram AFK Bot** is a lightweight and reliable Telegram bot that allows the bot owner to enable an AFK (Away From Keyboard) status with an optional reason. While AFK mode is active, the bot automatically replies to private messages with the reason and the duration since the AFK status was activated.
 
-## Возможности
+## Features
 
-- Отслеживание удалённых и изменённых сообщений  
-- Хранение текста и медиафайлов в базе данных SQLite  
-- Автоматическая отправка уведомлений администратору  
-- Работа через Business Connections  
-- Поддержка самоуничтожающихся сообщений  
-- Не требует сессии пользователя — только Telegram Premium и подключение бота
+- `/afk [reason]` — Enables AFK mode with an optional reason.
+- `/off_afk` — Disables AFK mode.
+- Sends auto-replies **only once per user** while AFK.
+- Includes the AFK reason and elapsed time in replies.
+- Minimal and easy to configure.
 
-## Установка
+## Requirements
 
-1. Клонируй репозиторий:
-   ```bash
-   git clone https://github.com/FoxCoderGit/telegram-message-archiver.git
-   cd telegram-message-archiver 
-   ```
-   
-2. Установи зависимости:
+- Python 3.9 or higher
+- `python-telegram-bot==20.0`
+- A **Telegram Business Bot** (Business connection enabled)
+- A **Telegram Premium account** (required to receive messages from strangers in private chats)
+
+## Installation
+
 ```bash
+git clone https://github.com/FoxCoderGit/telegram-afk-bot.git
+cd telegram-afk-bot
 pip install -r requirements.txt
 ```
 
-3. Отредактируй переменные в начале monitor_message.py:
-```Python
-BUSINESS_BOT_TOKEN = "your_bot_token"
-MASTER_CHAT_ID = your_telegram_id
-BUSINESS_OWNER_ID = your_telegram_id
-```
+## Usage
 
-4. Запусти бота:
+1. Open `afk_bot.py`
+2. Replace `OWNER_ID` with your own Telegram user ID.
+3. Replace `YOUR_BOT_TOKEN_HERE` with the bot token from [BotFather](https://t.me/BotFather).
+4. Make sure your bot is **connected as a business bot** and you are using **Telegram Premium**.
+5. Run the bot:
+
 ```bash
-python3 monitor_message.py
+python afk_bot.py
 ```
 
+The bot will automatically reply to private messages while you’re AFK, and stop when you disable it.
 
-## Структура проекта
+## License
 
-- `monitor_message.py` — основной скрипт бота  
-- `messages.db` — база данных SQLite (создаётся автоматически)  
-- `downloads/` — временная папка для медиа (очищается после отправки)  
-- `bot.log` — лог ошибок и событий
-
-## Требования
-
-- Python 3.7+  
-- Telegram Premium-аккаунт  
-- Бизнес-подключение Telegram Bot API
-
-
-## Лицензия
-
-Этот проект распространяется под лицензией [MIT](LICENSE).
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
