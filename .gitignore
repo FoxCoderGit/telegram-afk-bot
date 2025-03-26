@@ -1,6 +1,60 @@
+
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
-downloads/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Logs and databases
+*.log
 bot.log
 messages.db
-.env
+*.sqlite
+*.sqlite3
+
+# Downloads, temporary files
+downloads/
+*.tmp
+*.swp
+*.bak
+*.old
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# VSCode & IDE configs
+.vscode/
+.idea/
+
+# PyInstaller
+dist/
+build/
+*.spec
+
+# Test output
+htmlcov/
+coverage.xml
+*.cover
+.cache/
+
+# Custom project folders
+TTS/
+vosk_model/
+database/
+
+# Python history and system shell files
+.python_history
+.bash_history
+.wget-hsts
